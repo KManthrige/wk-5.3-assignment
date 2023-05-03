@@ -16,7 +16,7 @@ function addToCollection(title, songs, artist, yearPublished) {
 }
 
 addToCollection(
-    'esm',
+    'ems',
     [{ name: 'song1', duration: 3.09 }, { name: 'song2', duration: 5.23 }],
     'mc',
     2023
@@ -30,14 +30,19 @@ addToCollection(
 
 console.log('collection:', collection)
 
+
+
 function showCollection() {
-    console.log('number of items in the array', collection.length)
     for (i = 0; i < collection.length; i++) {
-        console.log(collection[i].title, 'by', collection[i].artist + ', published in', collection[i].yearPublished)
+        for (s = 0; s < collection[i].songs.length; s++)
+            console.log(collection[i].title, 'by', collection[i].artist + ', published in', collection[i].yearPublished + ':', collection[i].songs[s].name + ':', collection[i].songs[s].duration)
     }
+    return 
 }
 
 showCollection()
+
+
 
 let songsByArtist = []
 
@@ -50,7 +55,7 @@ function findByArtist(artist) {
     return artist
 }//end findByArtist function
 
-findByArtist('mco')
+findByArtist('mc')
 
 console.log('Find by artist:', songsByArtist)
 
